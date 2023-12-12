@@ -11,6 +11,7 @@ import { Layout } from "./components/layouts/";
 import Dashboard from "./pages/dashboard";
 import { PartnerOrders, VisitorOrders } from "./pages/orders";
 import { Partners, Visitors } from "./pages/users";
+import { Categories, Courses, Product, Skills } from "./pages/setup";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,12 @@ const router = createBrowserRouter(
       <Route path="users">
         <Route path="partners" element={<Partners />} />
         <Route path="visitors" element={<Visitors />} />
+      </Route>
+      <Route path="setup">
+        <Route path="product" element={<Product />} />
+        <Route path="categories" element={<Categories />} />
+        <Route path="skills" element={<Skills />} />
+        <Route path="courses" element={<Courses />} />
       </Route>
     </Route>
   )
