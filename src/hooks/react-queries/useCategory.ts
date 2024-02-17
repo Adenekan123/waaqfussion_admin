@@ -5,6 +5,7 @@ import {
   fetch_productscategories,
 } from "../../api/products";
 import { ICategory } from "../../types/product";
+import { toast } from "react-toastify";
 
 type ICreateResponse = {
   message: string;
@@ -22,7 +23,7 @@ const useCategory = () => {
     },
     {
       onSuccess: (data: ICreateResponse) => {
-        alert(data?.message || data?.error);
+        toast.success(data?.message || data?.error);
         queryClient.invalidateQueries("product/category");
       },
     }
@@ -34,7 +35,7 @@ const useCategory = () => {
     },
     {
       onSuccess: (data: ICreateResponse) => {
-        alert(data?.message || data?.error);
+        toast.success(data?.message || data?.error);
         queryClient.invalidateQueries("product/category");
       },
     }

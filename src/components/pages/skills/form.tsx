@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from "react-query";
 import { create_productskill, update_skill } from "../../../api/products";
 import { useState } from "react";
 import { ICategory } from "../../../types/product";
+import { toast } from "react-toastify";
 
 const initial_state = {
   _id: "",
@@ -25,7 +26,7 @@ export const ProductSkillForm = ({
     {
       onSuccess: (data) => {
         if (data?.message) {
-          alert(data.message);
+          toast.success(data.message);
           setState(initial_state);
           queryclient.invalidateQueries("product/skills");
         }
@@ -42,7 +43,7 @@ export const ProductSkillForm = ({
       onSuccess: (data) => {
         close();
         if (data?.message) {
-          alert(data.message);
+          toast.success(data.message);
           setState(initial_state);
           queryclient.invalidateQueries("product/skills");
         }

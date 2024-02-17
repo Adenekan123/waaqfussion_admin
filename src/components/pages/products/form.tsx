@@ -8,6 +8,7 @@ import {
 import { ICategory, IProductForm } from "../../../types/product";
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import { toast } from "react-toastify";
 
 const initial_state: IProductForm = {
   name: "",
@@ -45,7 +46,7 @@ export const ProductForm = ({
     {
       onSuccess: (data) => {
         if (data?.message) {
-          alert(data.message);
+          toast.success(data.message);
           setState(initial_state);
           queryclient.invalidateQueries("products");
         }
@@ -62,7 +63,7 @@ export const ProductForm = ({
       onSuccess: (data) => {
         close();
         if (data?.message) {
-          alert(data.message);
+          toast.success(data.message);
           setState(initial_state);
           queryclient.invalidateQueries("products");
         }

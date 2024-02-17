@@ -3,6 +3,7 @@ import { create_productcategory, update_category } from "../../../api/products";
 import { useState } from "react";
 import { ICategory } from "../../../types/product";
 import { apiErrorHandler } from "../../../api/error.handler";
+import { toast } from "react-toastify";
 
 const initial_state = {
   _id: "",
@@ -26,7 +27,7 @@ export const ProductCategoryForm = ({
     {
       onSuccess: (data) => {
         if (data?.message) {
-          alert(data.message);
+          toast(data.message);
           setState(initial_state);
           queryclient.invalidateQueries("product/categories");
         }
@@ -44,7 +45,7 @@ export const ProductCategoryForm = ({
       onSuccess: (data) => {
         close();
         if (data?.message) {
-          alert(data.message);
+          toast(data.message);
           setState(initial_state);
           queryclient.invalidateQueries("product/categories");
         }
