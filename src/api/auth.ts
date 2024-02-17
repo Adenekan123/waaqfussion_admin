@@ -26,3 +26,23 @@ export const login_async = async (credentials: {
 export const verifyAuth = () => {
   return localStorage.getItem(import.meta.env.VITE_AUTH_KEY);
 };
+
+export const logout_async = async () =>{
+  const request = await fetch(`${base_url}/auth/user/logout`,{
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem(
+        import.meta.env.VITE_AUTH_KEY
+      )}`,
+    },
+    cache: "no-cache",
+  });
+  if (!request.ok) {
+    if (request.status === 401) {
+      return await request.json();
+    } else {
+      // Handle other non-OK statuses
+      throw new Error(`Unable to logout`);
+    }
+  }
+}
