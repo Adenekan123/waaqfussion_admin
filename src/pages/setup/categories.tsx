@@ -1,7 +1,7 @@
-export const Categories = () => {
-  return (
-    <div>Categories</div>
-  )
-}
+import { ProductCategories } from "../../components/pages/categories";
 
-export default Categories
+export const Categories = () => {
+  return <ProductCategories />;
+};
+
+export default Categories;

@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+th,td{
+    padding: 13px 8px;
+    text-align: left;
+    color: rgb(104, 104, 104);
+  }
+
+thead tr{
+    background-color: whitesmoke;
+}
+
+
+tr:not(:last-child){
+    border-bottom: 1px solid rgb(230, 230, 230);
+}   
+
+
+.image-card:hover .overlay{
+    display: inline-flex;
+}
+

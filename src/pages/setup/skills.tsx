@@ -1,5 +1,7 @@
+import { ProductSkills } from "../../components/pages/skills"
+
 export const Skills = () => {
   return (
-    <div>Skills</div>
+    <ProductSkills/>
   )
 }

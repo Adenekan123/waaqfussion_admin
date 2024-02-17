@@ -1,7 +1,7 @@
-export const Product = () => {
-  return (
-    <div>Products</div>
-  )
-}
+import { ProductList } from "../../components";
 
-export default Product
+export const Product = () => {
+  return <ProductList />;
+};
+
+export default Product;
