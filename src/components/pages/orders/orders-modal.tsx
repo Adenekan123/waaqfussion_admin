@@ -31,7 +31,6 @@ const OrdersModal = ({
   list: {items:IOrders[]};
   close: () => void;
 }) => {
-  console.log(list)
   return (
     <Modal close={close}>
       {list && Array.isArray(list.items) && list.items.map((item, i) => (

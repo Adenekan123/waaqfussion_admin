@@ -68,17 +68,20 @@ const items = [
 export const ParterOrders = () => {
   const [openmodal, setOpenmodal] = useState<{
     key: string;
-    data: IOrders[];
+    data: { items: IOrders[] };
   } | null>();
 
   return (
     <div className="flex flex-col gap-y-4">
       <h2 className="font-bold">Partner Orders</h2>
-      <WaqTable items={items} openmodal={setOpenmodal as () => void} />
+      <WaqTable items={items} getter={setOpenmodal as () => void} />
       {openmodal ? (
         <>
           {openmodal.key === "items" ? (
-            <OrdersModal list={openmodal.data} close={()=> setOpenmodal(null)} />
+            <OrdersModal
+              list={openmodal.data}
+              close={() => setOpenmodal(null)}
+            />
           ) : null}
         </>
       ) : null}

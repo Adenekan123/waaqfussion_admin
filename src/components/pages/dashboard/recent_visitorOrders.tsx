@@ -10,11 +10,11 @@ export const RecentvisitorOrders = () => {
   console.log(data)
   const [openmodal, setOpenmodal] = useState<{
     key: string;
-    data: IOrders[];
+    data: {items: IOrders[];} 
   } | null>();
   const getter = (v:{
     key: string;
-    data: IOrders[];
+    data:{items: IOrders[]};
   })=>{
     setOpenmodal(v)
   }

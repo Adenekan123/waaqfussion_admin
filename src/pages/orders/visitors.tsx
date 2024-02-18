@@ -10,15 +10,12 @@ export const VisitorOrders = () => {
 
   const [openmodal, setOpenmodal] = useState<{
     key: string;
-    data: IOrders[];
+    data: { items: IOrders[] };
   } | null>();
 
-  const getter = (v:{
-    key: string;
-    data: IOrders[];
-  })=>{
-    setOpenmodal(v)
-  }
+  const getter = (v: { key: string; data: {items:IOrders[]} }) => {
+    setOpenmodal(v);
+  };
   return (
     <div className="flex flex-col gap-y-8 p-8">
       <h2 className="font-bold text-slate-700">Visitor Orders</h2>

@@ -9,12 +9,12 @@ export const PartnerOrders = () => {
   const { data } = useQuery("users/partners", fetch_partnerorders);
   const [openmodal, setOpenmodal] = useState<{
     key: string;
-    data: IOrders[];
+    data:{items:IOrders[]} ;
   } | null>();
   
   const getter = (v:{
     key: string;
-    data: IOrders[];
+    data: {items:IOrders[] } ;
   })=>{
     setOpenmodal(v)
   }
